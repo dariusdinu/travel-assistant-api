@@ -3,7 +3,7 @@ import { User } from '../../models';
 import generateToken from '../../utils/generate-token';
 
 async function signInWithPassword(req, res) {
-  const { emailAddress, password } = req.body;
+  const { email: emailAddress, password } = req.body;
   if (!emailAddress || !password) {
     return res.status(400).json({
       name: 'MissingCredentialsError',

@@ -3,7 +3,13 @@ import generateToken from '../../utils/generate-token';
 import isValidUser from '../../utils/is-valid-user';
 
 async function signUp(req, res) {
-  const { firstName, lastName, emailAddress, password, birthDate } = req.body;
+  const {
+    firstName,
+    lastName,
+    email: emailAddress,
+    password,
+    birthDate,
+  } = req.body;
   if (!isValidUser(firstName, lastName, emailAddress, birthDate)) {
     return res.status(400).json({ message: 'Invalid user' });
   }
