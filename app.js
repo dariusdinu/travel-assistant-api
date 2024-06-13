@@ -1,5 +1,6 @@
 import cookieParser from 'cookie-parser';
 import 'dotenv/config';
+
 import express from 'express';
 import logger from 'morgan';
 import { connect } from './functions';
@@ -9,6 +10,7 @@ import {
   usersRouter,
   stopsRouter,
   tripsRouter,
+  uploadRouter,
 } from './routes';
 
 const app = express();
@@ -24,6 +26,7 @@ app.use('/users', usersRouter);
 app.use('/stops', stopsRouter);
 app.use('/trips', tripsRouter);
 app.use('/completions', completionsRouter);
+app.use(uploadRouter);
 
 app.use(errorHandler);
 

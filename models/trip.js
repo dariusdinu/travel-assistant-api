@@ -1,12 +1,16 @@
 import mongoose, { Schema } from 'mongoose';
-import { stopSchema } from './stop';
 
 const tripSchema = new Schema(
   {
     userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    place: { type: String },
     type: { type: String, enum: ['manual', 'generated'], required: true },
-    leaveDate: { type: Date, required: true },
-    numberOfStops: { type: Number, default: 0 }, // Default value for number of stops
+    title: { type: String, required: false },
+    dateRange: {
+      start: { type: Date, required: false },
+      end: { type: Date, required: false },
+    },
+    numberOfStops: { type: Number, default: 0 },
     popularAttractions: { type: Boolean, default: false },
     trendingRestaurants: { type: Boolean, default: false },
     entertainmentPlaces: { type: Boolean, default: false },
@@ -18,7 +22,7 @@ const tripSchema = new Schema(
       kidFriendly: { type: Boolean, default: false },
     },
     willingToTravelFurther: { type: Boolean, default: false },
-    stops: [stopSchema],
+    stops: [{ type: Schema.Types.ObjectId, ref: 'Stop' }],
   },
   { timestamps: true }
 );
