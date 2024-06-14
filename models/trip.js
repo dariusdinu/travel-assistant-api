@@ -23,6 +23,7 @@ const tripSchema = new Schema(
     },
     willingToTravelFurther: { type: Boolean, default: false },
     stops: [{ type: Schema.Types.ObjectId, ref: 'Stop' }],
+    coverPhoto: { type: String, required: false },
   },
   { timestamps: true }
 );
