@@ -23,6 +23,8 @@ const stopSchema = new Schema(
       ref: 'Trip',
       required: true,
     },
+    isWheelchairAccessible: { type: Boolean, default: false },
+    isKidFriendly: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

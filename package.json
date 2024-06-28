@@ -1,12 +1,12 @@
 {
-  "name": "eco-gadget-api",
+  "name": "travel-assistant-api",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "babel . -d dist",
-    "dev": "SET DEBUG=eco-gadget-api:* & nodemon --exec babel-node --presets=@babel/preset-env -- ./bin/www.js",
+    "dev": "SET DEBUG=travel-assistant-api:* & nodemon --exec babel-node --presets=@babel/preset-env -- ./bin/www.js",
     "prisma:seed": "babel-node prisma/seed.js",
-    "start": "SET DEBUG=eco-gadget-api:* & node ./dist/bin/www.js",
+    "start": "SET DEBUG=travel-assistant-api:* & node ./dist/bin/www.js",
     "test": "jest"
   },
   "dependencies": {

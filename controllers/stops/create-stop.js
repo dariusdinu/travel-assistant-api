@@ -10,6 +10,8 @@ async function createStop(req, res) {
       notes,
       images,
       additionalFiles,
+      isWheelchairAccessible,
+      isKidFriendly,
       tripId,
     } = req.body;
 
@@ -26,6 +28,8 @@ async function createStop(req, res) {
       notes,
       images,
       additionalFiles,
+      isWheelchairAccessible,
+      isKidFriendly,
       tripId,
     });
 

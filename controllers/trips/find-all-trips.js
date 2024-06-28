@@ -1,6 +1,5 @@
 import Trip from '../../models/trip';
 
-// Get all trips
 async function findAllTrips(req, res) {
   try {
     const trips = await Trip.find().populate('stops');
