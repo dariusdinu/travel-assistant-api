@@ -29,6 +29,7 @@ const userSchema = new Schema(
     },
     birthDate: { type: Date, default: Date.now },
     profilePicture: { type: String, required: false },
+    notificationsEnabled: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
